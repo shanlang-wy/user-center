@@ -24,7 +24,7 @@ export default defineConfig({
   },
   // umi routes: https://umijs.org/docs/routing
   routes,
-  // Theme for antd: https://ant.design/docs/react/customize-theme-cn
+  // Theme variables
   theme: {
     'root-entry-name': 'variable',
   },

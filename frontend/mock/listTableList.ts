@@ -11,14 +11,11 @@ const genList = (current: number, pageSize: number) => {
     tableListDataSource.push({
       key: index,
       disabled: i % 6 === 0,
-      href: 'https://ant.design',
-      avatar: [
-        'https://gw.alipayobjects.com/zos/rmsportal/eeHMaZBwmTvLdIwMfBpg.png',
-        'https://gw.alipayobjects.com/zos/rmsportal/udxAbMEhpwthVVcjLXik.png',
-      ][i % 2],
-      name: `TradeCode ${index}`,
-      owner: '曲丽丽',
-      desc: '这是一段描述',
+      href: '',
+      avatar: '',
+      name: `权限规则 ${index}`,
+      owner: '系统管理员',
+      desc: '用户中心示例规则',
       callNo: Math.floor(Math.random() * 1000),
       status: Math.floor(Math.random() * 10) % 4,
       updatedAt: moment().format('YYYY-MM-DD'),
@@ -119,16 +116,12 @@ function postRule(req: Request, res: Response, u: string, b: Request) {
       break;
     case 'post':
       (() => {
-        const i = Math.ceil(Math.random() * 10000);
         const newRule: API.RuleListItem = {
           key: tableListDataSource.length,
-          href: 'https://ant.design',
-          avatar: [
-            'https://gw.alipayobjects.com/zos/rmsportal/eeHMaZBwmTvLdIwMfBpg.png',
-            'https://gw.alipayobjects.com/zos/rmsportal/udxAbMEhpwthVVcjLXik.png',
-          ][i % 2],
+          href: '',
+          avatar: '',
           name,
-          owner: '曲丽丽',
+          owner: '系统管理员',
           desc,
           callNo: Math.floor(Math.random() * 1000),
           status: Math.floor(Math.random() * 10) % 2,

@@ -53,9 +53,9 @@ source sql/create_table.sql;
 ```yaml
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/han?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: root
-    password: 123456
+    url: ${MYSQL_URL:jdbc:mysql://localhost:3306/user_center?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai}
+    username: ${MYSQL_USERNAME:user_center}
+    password: ${MYSQL_PASSWORD:change_me}
 ```
 
 生产环境可通过环境变量配置：

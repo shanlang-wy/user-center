@@ -6,9 +6,9 @@ spring:
   # DataSource Config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/han?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: root
-    password: 123456
+    url: ${MYSQL_URL:jdbc:mysql://localhost:3306/user_center?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai}
+    username: ${MYSQL_USERNAME:user_center}
+    password: ${MYSQL_PASSWORD:change_me}
   # session 失效时间
   session:
     timeout: 86400

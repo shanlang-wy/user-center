@@ -2,7 +2,7 @@
 /* eslint-disable no-underscore-dangle */
 /* globals workbox */
 workbox.core.setCacheNameDetails({
-  prefix: 'antd-pro',
+  prefix: 'user-center',
   suffix: 'v5',
 });
 // Control all opened tabs ASAP
@@ -32,10 +32,6 @@ workbox.routing.registerNavigationRoute('/index.html');
 workbox.routing.registerRoute(/\/api\//, workbox.strategies.networkFirst());
 
 /** Handle third party requests */
-workbox.routing.registerRoute(
-  /^https:\/\/gw\.alipayobjects\.com\//,
-  workbox.strategies.networkFirst(),
-);
 workbox.routing.registerRoute(
   /^https:\/\/cdnjs\.cloudflare\.com\//,
   workbox.strategies.networkFirst(),

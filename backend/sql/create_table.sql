@@ -1,10 +1,10 @@
 # 数据库初始化
 
 -- 创建库
-create database if not exists han;
+create database if not exists user_center;
 
 -- 切换库
-use han;
+use user_center;
 
 # 用户表
 create table user
@@ -29,10 +29,9 @@ create table user
 )
     comment '用户';
 
--- 1. 查看当前表结构
-SHOW FULL COLUMNS FROM han.user;
--- 2. 修改表和列字符集
-ALTER TABLE han.user CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-# 导入示例用户
-INSERT INTO han.user (username, userAccount, avatarUrl, gender, userPassword, phone, email, userStatus, createTime, updateTime, isDelete, userRole, planetCode) VALUES ('兰特', 'han', 'https://himg.bdimg.com/sys/portraitn/item/public.1.e137c1ac.yS1WqOXfSWEasOYJ2-0pvQ', null, 'b0dd3697a192885d7c055db46155b26a', null, null, 0, '2023-08-06 14:14:22', '2023-08-06 14:39:37', 0, 1, '1');
+-- 查看当前表结构
+SHOW FULL COLUMNS FROM user_center.user;
+
+-- 修改表和列字符集
+ALTER TABLE user_center.user CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

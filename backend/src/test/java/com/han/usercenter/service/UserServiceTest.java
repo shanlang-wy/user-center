@@ -75,19 +75,19 @@ public class UserServiceTest {
      */
     @Test
     void userRegister() {
-        String userAccount = "han";
+        String userAccount = "demo";
         String userPassword = "";
         String checkPassword = "123456";
         String planetCode = "1";
         long result = userService.userRegister(userAccount, userPassword, checkPassword, planetCode);
         Assertions.assertEquals(-1, result);
-        userAccount = "yu";
+        userAccount = "ab";
         result = userService.userRegister(userAccount, userPassword, checkPassword, planetCode);
         Assertions.assertEquals(-1, result);
         userPassword = "123456";
         result = userService.userRegister(userAccount, userPassword, checkPassword, planetCode);
         Assertions.assertEquals(-1, result);
-        userAccount = "yu pi";
+        userAccount = "demo user";
         userPassword = "12345678";
         result = userService.userRegister(userAccount, userPassword, checkPassword, planetCode);
         Assertions.assertEquals(-1, result);

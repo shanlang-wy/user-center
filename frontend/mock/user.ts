@@ -13,14 +13,13 @@ async function getFakeCaptcha(req: Request, res: Response) {
   return res.json('captcha-xxx');
 }
 
-const { ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION } = process.env;
+const { USER_CENTER_MOCK_ACCESS } = process.env;
 
 /**
  * 当前用户的权限，如果为空代表没登录
  * current user access， if is '', user need login
- * 如果是 pro 的预览，默认是有权限的
  */
-let access = ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION === 'site' ? 'admin' : '';
+let access = USER_CENTER_MOCK_ACCESS === 'admin' ? 'admin' : '';
 
 const getAccess = () => {
   return access;
@@ -44,37 +43,37 @@ export default {
     res.send({
       success: true,
       data: {
-        name: 'Serati Ma',
-        avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+        name: '系统管理员',
+        avatar: '',
         userid: '00000001',
-        email: 'antdesign@alipay.com',
-        signature: '海纳百川，有容乃大',
-        title: '交互专家',
-        group: '蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED',
+        email: '',
+        signature: '保持简单、可靠、可维护',
+        title: '用户中心管理员',
+        group: '用户中心',
         tags: [
           {
             key: '0',
-            label: '很有想法的',
+            label: '管理员',
           },
           {
             key: '1',
-            label: '专注设计',
+            label: '用户管理',
           },
           {
             key: '2',
-            label: '辣~',
+            label: '权限管理',
           },
           {
             key: '3',
-            label: '大长腿',
+            label: '审计日志',
           },
           {
             key: '4',
-            label: '川妹子',
+            label: '资料维护',
           },
           {
             key: '5',
-            label: '海纳百川',
+            label: '头像上传',
           },
         ],
         notifyCount: 12,
@@ -91,8 +90,8 @@ export default {
             key: '330100',
           },
         },
-        address: '西湖区工专路 77 号',
-        phone: '0752-268888888',
+        address: '用户中心示例地址',
+        phone: '13800000000',
       },
     });
   },
@@ -100,27 +99,27 @@ export default {
   'GET /api/users': [
     {
       key: '1',
-      name: 'John Brown',
+      name: '示例用户 A',
       age: 32,
-      address: 'New York No. 1 Lake Park',
+      address: '示例地址 A',
     },
     {
       key: '2',
-      name: 'Jim Green',
+      name: '示例用户 B',
       age: 42,
-      address: 'London No. 1 Lake Park',
+      address: '示例地址 B',
     },
     {
       key: '3',
-      name: 'Joe Black',
+      name: '示例用户 C',
       age: 32,
-      address: 'Sidney No. 1 Lake Park',
+      address: '示例地址 C',
     },
   ],
   'POST /api/login/account': async (req: Request, res: Response) => {
     const { password, username, type } = req.body;
     await waitTime(2000);
-    if (password === 'ant.design' && username === 'admin') {
+    if (password === 'user-center' && username === 'admin') {
       res.send({
         status: 'ok',
         type,
@@ -129,7 +128,7 @@ export default {
       access = 'admin';
       return;
     }
-    if (password === 'ant.design' && username === 'user') {
+    if (password === 'user-center' && username === 'user') {
       res.send({
         status: 'ok',
         type,
