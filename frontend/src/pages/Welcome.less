@@ -1,0 +1,57 @@
+@import (reference) '~antd/es/style/themes/index';
+
+.hero {
+  min-height: 220px;
+  margin-bottom: 16px;
+  padding: 34px 36px;
+  color: #17233d;
+  background:
+    linear-gradient(120deg, rgba(235, 247, 255, 0.96), rgba(255, 255, 255, 0.92)),
+    radial-gradient(circle at 86% 18%, rgba(24, 144, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 72% 90%, rgba(82, 196, 26, 0.16), transparent 28%);
+  border: 1px solid rgba(222, 232, 242, 0.9);
+  border-radius: 8px;
+
+  h2 {
+    margin: 18px 0 10px;
+    color: #17233d;
+  }
+
+  p {
+    max-width: 680px;
+    color: #58677d;
+    font-size: 15px;
+  }
+}
+
+.metrics {
+  margin-bottom: 16px;
+
+  :global(.ant-card) {
+    border-radius: 8px;
+  }
+}
+
+.capability {
+  min-height: 170px;
+  border-radius: 8px;
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #66758a;
+  }
+}
+
+.capabilityIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 16px;
+  color: #1677ff;
+  font-size: 22px;
+  background: #edf6ff;
+  border-radius: 8px;
+}
